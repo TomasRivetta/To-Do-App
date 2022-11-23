@@ -1,10 +1,11 @@
 import checkComplete from "./checkComplete.js";
 import deleteIcon from "./deleteIcon.js";
+import { dsplayTasks } from "./readTasks.js";
 
 export const addTask = (evento) => {
     evento.preventDefault();
-    const list = document.querySelector("[data-list]");
 
+    const list = document.querySelector("[data-list]");
     const input = document.querySelector("[data-form-input]");
     const calendar = document.querySelector("[data-form-date]");
 
@@ -28,14 +29,14 @@ export const addTask = (evento) => {
         dateFormat
     }
 
+    list.innerHTML = "";
+
     //para obtener la informacion del local STORAGE
     const taskList = JSON.parse(localStorage.getItem("tasks")) || [];
     taskList.push({ value, dateFormat });
     localStorage.setItem("tasks", JSON.stringify(taskList));
 
-
-    const task = createTask(taskObj);
-    list.appendChild(task);
+    dsplayTasks();
 
 }
 
