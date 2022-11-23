@@ -1,13 +1,16 @@
 import { createTask } from "./addTask.js";
-import { uniqueDates } from "../services/date.js";
+import { uniqueDates, orderDates } from "../services/date.js";
 import dateElement from "./dateElement.js";
 
 export const dsplayTasks = () => {
-
+    console.log(uuid.v4())
     const list = document.querySelector("[data-list]")
 
     const tasksList = JSON.parse(localStorage.getItem("tasks")) || [];
     const dates = uniqueDates(tasksList);
+    
+    //Llamo a la funcion para que ordene las fechas
+    orderDates(dates);
     
     dates.forEach( date => {
         
