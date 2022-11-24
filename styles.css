@@ -24,6 +24,7 @@ form {
   align-items: center;
   display: flex;
   margin-bottom: 15px;
+  gap: 2%;
 }
 
 .mainCard {
