@@ -21,6 +21,8 @@ export const addTask = (evento) => {
     //Creamos este array para que vaya guardando todas las tareas que creamos
     // const taskList = []
 
+    swal("Tarea creada!", "sonrie y se feliz!", "success");
+
     input.value = "";
 
     calendar.value = "";
