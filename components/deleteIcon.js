@@ -15,6 +15,9 @@ const deleteTask = (id) => {
     tasks.splice(index,1);
     li.innerHTML = "";
     localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    swal("Tarea Eliminada con exito!", "", "success");
+    
     displayTasks();
 };
 
