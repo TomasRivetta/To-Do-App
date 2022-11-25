@@ -15,9 +15,6 @@ const completeTask = (event,id) => {
     const index = tasks.findIndex( item => item.id === id)
     tasks[index]["complete"] = !tasks[index]["complete"]
     localStorage.setItem("tasks", JSON.stringify(tasks));
-
-    
-
 };
 
 export default checkComplete;

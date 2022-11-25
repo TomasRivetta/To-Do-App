@@ -2,7 +2,7 @@ import { createTask } from "./addTask.js";
 import { uniqueDates, orderDates } from "../services/date.js";
 import dateElement from "./dateElement.js";
 
-export const dsplayTasks = () => {
+export const displayTasks = () => {
     console.log(uuid.v4())
     const list = document.querySelector("[data-list]")
 

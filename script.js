@@ -1,5 +1,5 @@
 import { addTask } from "./components/addTask.js"
-import { dsplayTasks } from "./components/readTasks.js";
+import { displayTasks } from "./components/readTasks.js";
 
 const btn = document.querySelector("[data-form-btn]");
 
@@ -8,4 +8,4 @@ const btn = document.querySelector("[data-form-btn]");
 //click
 btn.addEventListener("click", addTask);
 
-dsplayTasks();
+displayTasks();
