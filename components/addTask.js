@@ -1,7 +1,7 @@
 import { uniqueDates } from "../services/date.js";
 import checkComplete from "./checkComplete.js";
 import deleteIcon from "./deleteIcon.js";
-import { dsplayTasks } from "./readTasks.js";
+import { displayTasks } from "./readTasks.js";
 
 export const addTask = (evento) => {
     evento.preventDefault();
@@ -43,7 +43,7 @@ export const addTask = (evento) => {
     taskList.push( taskObj );
     localStorage.setItem("tasks", JSON.stringify(taskList));
 
-    dsplayTasks();
+    displayTasks();
 
 }
 
@@ -60,7 +60,7 @@ export const createTask = ({ value, dateFormat, complete, id }) => {
     const check = checkComplete(id)
 
     if(complete){
-        console.log("completada")
+        
         check.classList.toggle("fas");
         check.classList.toggle("completeIcon");
         check.classList.toggle("far");
@@ -75,12 +75,14 @@ export const createTask = ({ value, dateFormat, complete, id }) => {
     //taskContent.appendChild(deleteIcon());
     //task.innerHTML = content;
 
-    const dateElement = document.createElement("span");
-    dateElement.innerHTML = dateFormat;
+    //PARA QUE EN LA MISMA TAREA SE VEA LA FECHA DE CREACION
+    // const dateElement = document.createElement("span");
+    // dateElement.innerHTML = dateFormat;
+    //task.appendChild(dateElement);
+
     //console.log(dateElement);
     task.appendChild(taskContent);
-    task.appendChild(dateElement);
-    task.appendChild(deleteIcon());
+    task.appendChild(deleteIcon(id));
 
     return task;
 };
